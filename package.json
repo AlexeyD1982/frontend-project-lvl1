@@ -1,6 +1,6 @@
 {
   "name": "alexey_demin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "mind game",
   "main": "src/index.js",
   "type": "module",
