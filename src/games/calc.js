@@ -9,8 +9,8 @@ const playGame = () => {
     if (counter >= 3) {
       return console.log(`Congratulations, ${playerName}!`);
     }
-    const randomNumber1 = getRandomNum();
-    const randomNumber2 = getRandomNum();
+    const randomNumber1 = getRandomNum(50);
+    const randomNumber2 = getRandomNum(50);
     const correctAnswer = getRamdomOperation(randomNumber1, randomNumber2);
     const playerAnswer = Number(getplayerAnswer());
     const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);

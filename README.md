@@ -12,3 +12,8 @@ https://asciinema.org/a/302421
 # brain-gcd
 https://asciinema.org/a/302475
 
+# brain-progression
+https://asciinema.org/a/302525
+
+# brain-prime
+https://asciinema.org/a/302545

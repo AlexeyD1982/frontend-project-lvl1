@@ -1,18 +1,17 @@
 import {
-  toGreetPlayer, getRandomNum, isEven, checkAnswer, getplayerAnswer,
+  toGreetPlayer, getRandomNum, checkAnswer, getplayerAnswer, isPrimeNumber,
 } from '../index.js';
 
 const playGame = () => {
   const playerName = toGreetPlayer();
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const doStep = (counter) => {
     if (counter >= 3) {
       return console.log(`Congratulations, ${playerName}!`);
     }
-    const randomNumber = getRandomNum(50);
-    console.log(`Question: ${randomNumber}`);
+    const randomNumber = getRandomNum(150);
+    const correctAnswer = isPrimeNumber(randomNumber);
     const playerAnswer = getplayerAnswer();
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
     const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);
     return doStep(newCount);
   };

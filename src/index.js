@@ -12,7 +12,7 @@ export const toGreetPlayer = () => {
   return playerName;
 };
 
-export const getRandomNum = () => Math.floor(Math.random() * 50) + 1;
+export const getRandomNum = (maxNumber) => Math.floor(Math.random() * maxNumber) + 1;
 
 export const getplayerAnswer = () => readlineSync.question('Your answer: ');
 
@@ -62,4 +62,28 @@ export const getGreatestCommonDivisor = (number1, number2) => {
     }
   }
   return result;
+};
+
+export const progression = (firstNum, increment) => {
+  const array = [firstNum];
+  for (let i = 1; i < 10; i += 1) {
+    array.push(array[i - 1] + increment);
+  }
+  const randomIndex = getRandomNum(9);
+  const result = array[randomIndex];
+  array[randomIndex] = '..';
+  console.log(`Question: ${array.join(' ')}`);
+  return result;
+};
+
+export const isPrimeNumber = (number) => {
+  console.log(`Question: ${number}`);
+  let primeNumber = true;
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      primeNumber = false;
+      break;
+    }
+  }
+  return primeNumber === true ? 'yes' : 'no';
 };
