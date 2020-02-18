@@ -50,3 +50,16 @@ export const getRamdomOperation = (number1, number2) => {
   const operIndex = Math.floor(Math.random() * 3);
   return operations[operIndex](number1, number2);
 };
+
+export const getGreatestCommonDivisor = (number1, number2) => {
+  console.log(`Question: ${number1} ${number2}`);
+  const maxDivisor = number1 <= number2 ? number1 : number2;
+  let result = maxDivisor;
+  for (let i = maxDivisor; i > 0; i -= 1) {
+    if (number1 % i === 0 && number2 % i === 0) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+};
