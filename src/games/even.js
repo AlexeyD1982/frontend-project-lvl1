@@ -1,21 +1,16 @@
 import {
-  toGreetPlayer, getRandomNum, isEven, checkAnswer, getplayerAnswer,
+  getRandomNum, playGame,
 } from '../index.js';
 
-const playGame = () => {
-  const playerName = toGreetPlayer();
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  const doStep = (counter) => {
-    if (counter >= 3) {
-      return console.log(`Congratulations, ${playerName}!`);
-    }
-    const randomNumber = getRandomNum(50);
-    console.log(`Question: ${randomNumber}`);
-    const playerAnswer = getplayerAnswer();
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-    const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);
-    return doStep(newCount);
-  };
-  doStep(0);
+const isEven = (num) => num % 2 === 0;
+const topic = 'Answer "yes" if the number is even, otherwise answer "no"';
+
+const even = () => {
+  const question = getRandomNum(50);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
-export default playGame;
+
+playGame(even, topic);
+
+export default even;

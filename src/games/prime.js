@@ -1,20 +1,26 @@
 import {
-  toGreetPlayer, getRandomNum, checkAnswer, getplayerAnswer, isPrimeNumber,
+  getRandomNum, playGame,
 } from '../index.js';
 
-const playGame = () => {
-  const playerName = toGreetPlayer();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const doStep = (counter) => {
-    if (counter >= 3) {
-      return console.log(`Congratulations, ${playerName}!`);
+const topic = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const isPrimeNumber = (number) => {
+  let primeNumber = true;
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      primeNumber = false;
+      break;
     }
-    const randomNumber = getRandomNum(150);
-    const correctAnswer = isPrimeNumber(randomNumber);
-    const playerAnswer = getplayerAnswer();
-    const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);
-    return doStep(newCount);
-  };
-  doStep(0);
+  }
+  return primeNumber === true ? 'yes' : 'no';
 };
-export default playGame;
+
+const prime = () => {
+  const question = getRandomNum(150);
+  const correctAnswer = isPrimeNumber(question);
+  return [question, correctAnswer];
+};
+
+playGame(prime, topic);
+
+export default prime;

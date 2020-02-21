@@ -1,21 +1,32 @@
 import {
-  toGreetPlayer, getRandomNum, checkAnswer, getplayerAnswer, getRamdomOperation,
+  getRandomNum, playGame,
 } from '../index.js';
 
-const playGame = () => {
-  const playerName = toGreetPlayer();
-  console.log('What is the result of the expression?');
-  const doStep = (counter) => {
-    if (counter >= 3) {
-      return console.log(`Congratulations, ${playerName}!`);
-    }
-    const randomNumber1 = getRandomNum(50);
-    const randomNumber2 = getRandomNum(50);
-    const correctAnswer = getRamdomOperation(randomNumber1, randomNumber2);
-    const playerAnswer = Number(getplayerAnswer());
-    const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);
-    return doStep(newCount);
-  };
-  doStep(0);
+const topic = 'What is the result of the expression?';
+
+const calc = () => {
+  const randomNumber1 = getRandomNum(50);
+  const randomNumber2 = getRandomNum(50);
+  const operations = ['sum', 'diff', 'multi'];
+  const operIndex = Math.floor(Math.random() * 3);
+  let result = [];
+  let question = '';
+  switch (operations[operIndex]) {
+    case 'sum':
+      question = `${randomNumber1} + ${randomNumber2}`;
+      return [question, randomNumber1 + randomNumber2];
+      break;
+    case 'diff':
+      question = `${randomNumber1} - ${randomNumber2}`;
+      return [question, randomNumber1 - randomNumber2];
+      break;
+    case 'multi':
+      question = `${randomNumber1} * ${randomNumber2}`;
+      return [question, randomNumber1 * randomNumber2];
+      break;
+  }
 };
-export default playGame;
+
+playGame(calc, topic);
+
+export default calc;

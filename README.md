@@ -7,7 +7,7 @@
 https://asciinema.org/connect/04f73ef2-452e-4141-ad44-d6102458a623
 
 # brain-calc
-https://asciinema.org/a/302421
+<a href="https://asciinema.org/a/302421"><img src="https://asciinema.org/a/302421.png" width="836"/></a>
 
 # brain-gcd
 https://asciinema.org/a/302475
