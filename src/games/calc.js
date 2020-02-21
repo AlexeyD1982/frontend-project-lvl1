@@ -1,5 +1,5 @@
 import { playGame } from '../index.js';
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../utils.js';
 
 const topic = 'What is the result of the expression?';
 
