@@ -14,17 +14,20 @@ const calc = () => {
   switch (operations[operIndex]) {
     case 'sum':
       question = `${randomNumber1} + ${randomNumber2}`;
-      return [question, randomNumber1 + randomNumber2];
+      result = [question, randomNumber1 + randomNumber2];
       break;
     case 'diff':
       question = `${randomNumber1} - ${randomNumber2}`;
-      return [question, randomNumber1 - randomNumber2];
+      result = [question, randomNumber1 - randomNumber2];
       break;
     case 'multi':
       question = `${randomNumber1} * ${randomNumber2}`;
-      return [question, randomNumber1 * randomNumber2];
+      result = [question, randomNumber1 * randomNumber2];
+      break;
+    default:
       break;
   }
+  return result;
 };
 
 playGame(calc, topic);
