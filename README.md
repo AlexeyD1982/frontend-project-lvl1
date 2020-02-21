@@ -4,16 +4,16 @@
 [![Node CI](https://github.com/AlexeyD1982/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/AlexeyD1982/frontend-project-lvl1/actions)
 
 # brain-even
-https://asciinema.org/connect/04f73ef2-452e-4141-ad44-d6102458a623
+<script src="https://asciinema.org/a/303464.js" id="asciicast-14" async></script>
 
 # brain-calc
 <a href="https://asciinema.org/a/302421"><img src="https://asciinema.org/a/302421.png" width="836"/></a>
 
 # brain-gcd
-https://asciinema.org/a/302475
+<a href="https://asciinema.org/a/302475"><img src="https://asciinema.org/a/302475.png" width="836"/></a>
 
 # brain-progression
-https://asciinema.org/a/302525
+<a href="https://asciinema.org/a/302525"><img src="https://asciinema.org/a/302525.png" width="836"/></a>
 
 # brain-prime
-https://asciinema.org/a/302545
+<a href="https://asciinema.org/a/302545"><img src="https://asciinema.org/a/302545.png" width="836"/></a>
