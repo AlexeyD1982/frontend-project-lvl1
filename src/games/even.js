@@ -1,6 +1,5 @@
-import {
-  getRandomNum, playGame,
-} from '../index.js';
+import { playGame } from '../index.js';
+import { getRandomNum } from '../utils.js';
 
 const isEven = (num) => num % 2 === 0;
 const topic = 'Answer "yes" if the number is even, otherwise answer "no"';

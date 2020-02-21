@@ -1,6 +1,5 @@
-import {
-  getRandomNum, playGame,
-} from '../index.js';
+import { playGame } from '../index.js';
+import { getRandomNum } from '../utils.js';
 
 const topic = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

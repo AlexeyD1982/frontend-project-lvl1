@@ -12,8 +12,6 @@ export const toGreetPlayer = () => {
   return playerName;
 };
 
-export const getRandomNum = (maxNumber) => Math.floor(Math.random() * maxNumber) + 1;
-
 const checkAnswer = (playerAnswer, correctAnswer, playerName, counter) => {
   let newCount = 0;
   if (playerAnswer === String(correctAnswer)) {
