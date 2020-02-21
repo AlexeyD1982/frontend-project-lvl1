@@ -20,6 +20,8 @@ const prime = () => {
   return [question, correctAnswer];
 };
 
-playGame(prime, topic);
+const startGame = () => {
+  playGame(prime, topic);
+};
 
-export default prime;
+export default startGame;

@@ -29,6 +29,8 @@ const calc = () => {
   return result;
 };
 
-playGame(calc, topic);
+const startGame = () => {
+  playGame(calc, topic);
+};
 
-export default calc;
+export default startGame;

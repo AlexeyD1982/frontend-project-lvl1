@@ -10,6 +10,8 @@ const even = () => {
   return [question, correctAnswer];
 };
 
-playGame(even, topic);
+const startGame = () => {
+  playGame(even, topic);
+};
 
-export default even;
+export default startGame;

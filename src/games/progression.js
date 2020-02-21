@@ -20,6 +20,8 @@ const playProgression = () => {
   return progression(randomNumber, increment);
 };
 
-playGame(playProgression, topic);
+const startGame = () => {
+  playGame(playProgression, topic);
+};
 
-export default playProgression;
+export default startGame;

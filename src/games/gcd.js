@@ -23,6 +23,8 @@ const gcd = () => {
   return [question, correctAnswer];
 };
 
-playGame(gcd, topic);
+const startGame = () => {
+  playGame(gcd, topic);
+};
 
-export default gcd;
+export default startGame;
