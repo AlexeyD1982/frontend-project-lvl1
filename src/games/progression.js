@@ -1,27 +1,27 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import getRandomNum from '../utils.js';
 
-const topic = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
-const progression = (firstNum, increment) => {
+const makeProgression = (firstNum, increment) => {
   const array = [firstNum];
   for (let i = 1; i < 10; i += 1) {
     array.push(array[i - 1] + increment);
   }
-  const randomIndex = getRandomNum(9);
+  const randomIndex = getRandomNum(0, 9);
   const result = array[randomIndex];
   array[randomIndex] = '..';
-  return [array.join(' '), result];
+  return [array.join(' '), String(result)];
 };
 
 const playProgression = () => {
-  const randomNumber = getRandomNum(50);
-  const increment = getRandomNum(5);
-  return progression(randomNumber, increment);
+  const randomNumber = getRandomNum(1, 50);
+  const increment = getRandomNum(1, 5);
+  return makeProgression(randomNumber, increment);
 };
 
 const startGame = () => {
-  playGame(playProgression, topic);
+  playGame(playProgression, task);
 };
 
 export default startGame;

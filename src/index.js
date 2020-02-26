@@ -1,20 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const getPlayerName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  return name;
-};
-
-export const toGreetPlayer = () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = getPlayerName();
-  console.log(`Hello, ${playerName}!`);
-  return playerName;
-};
-
 const checkAnswer = (playerAnswer, correctAnswer, playerName, counter) => {
   let newCount = 0;
-  if (playerAnswer === String(correctAnswer)) {
+  if (playerAnswer === correctAnswer) {
     console.log('Correct!');
     newCount = counter + 1;
   } else {
@@ -24,9 +12,11 @@ const checkAnswer = (playerAnswer, correctAnswer, playerName, counter) => {
   return newCount;
 };
 
-export const playGame = (func, topic) => {
-  const playerName = toGreetPlayer();
-  console.log(topic);
+const playGame = (func, task) => {
+  console.log('Welcome to the Brain Games!');
+  const playerName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${playerName}!`);
+  console.log(task);
   const doStep = (counter) => {
     if (counter >= 3) {
       return console.log(`Congratulations, ${playerName}!`);
@@ -39,3 +29,4 @@ export const playGame = (func, topic) => {
   };
   doStep(0);
 };
+export default playGame;

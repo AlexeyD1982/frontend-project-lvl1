@@ -1,36 +1,37 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import getRandomNum from '../utils.js';
 
-const topic = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
-const calc = () => {
-  const randomNumber1 = getRandomNum(50);
-  const randomNumber2 = getRandomNum(50);
-  const operations = ['sum', 'diff', 'multi'];
-  const operIndex = Math.floor(Math.random() * 3);
-  let result = [];
-  let question = '';
-  switch (operations[operIndex]) {
-    case 'sum':
-      question = `${randomNumber1} + ${randomNumber2}`;
-      result = [question, randomNumber1 + randomNumber2];
+const makeOperation = (num1, num2, operation) => {
+  let result = 0;
+  switch (operation) {
+    case '+':
+      result += num1 + num2;
       break;
-    case 'diff':
-      question = `${randomNumber1} - ${randomNumber2}`;
-      result = [question, randomNumber1 - randomNumber2];
+    case '-':
+      result += num1 - num2;
       break;
-    case 'multi':
-      question = `${randomNumber1} * ${randomNumber2}`;
-      result = [question, randomNumber1 * randomNumber2];
+    case '*':
+      result += num1 * num2;
       break;
     default:
-      break;
   }
   return result;
 };
 
+const playCalculation = () => {
+  const randomNumber1 = getRandomNum(1, 50);
+  const randomNumber2 = getRandomNum(1, 50);
+  const operations = ['+', '-', '*'];
+  const operIndex = getRandomNum(0, 2);
+  const result = makeOperation(randomNumber1, randomNumber2, operations[operIndex]);
+  const question = `${randomNumber1} ${operations[operIndex]} ${randomNumber2}`;
+  return [question, String(result)];
+};
+
 const startGame = () => {
-  playGame(calc, topic);
+  playGame(playCalculation, task);
 };
 
 export default startGame;
