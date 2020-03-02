@@ -9,9 +9,9 @@ const makeProgression = (firstNum, increment) => {
     array.push(array[i - 1] + increment);
   }
   const randomIndex = getRandomNum(0, 9);
-  const result = array[randomIndex];
+  const correctAnswer = array[randomIndex];
   array[randomIndex] = '..';
-  return [array.join(' '), String(result)];
+  return [array.join(' '), String(correctAnswer)];
 };
 
 const playProgression = () => {

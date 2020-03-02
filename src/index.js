@@ -1,17 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const checkAnswer = (playerAnswer, correctAnswer, playerName, counter) => {
-  let newCount = 0;
-  if (playerAnswer === correctAnswer) {
-    console.log('Correct!');
-    newCount = counter + 1;
-  } else {
-    console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-    console.log(`Let's try again, ${playerName}!`);
-  }
-  return newCount;
-};
-
 const playGame = (func, task) => {
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
@@ -24,8 +12,14 @@ const playGame = (func, task) => {
     const [question, correctAnswer] = func();
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    const newCount = checkAnswer(playerAnswer, correctAnswer, playerName, counter);
-    return doStep(newCount);
+    if (playerAnswer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${playerName}!`);
+      return doStep(0);
+    }
+    return doStep(counter + 1);
   };
   doStep(0);
 };
