@@ -12,13 +12,12 @@ const playGame = (func, task) => {
     const [question, correctAnswer] = func();
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    if (playerAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
+    if (playerAnswer !== correctAnswer) {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${playerName}!`);
       return doStep(0);
     }
+    console.log('Correct!');
     return doStep(counter + 1);
   };
   doStep(0);

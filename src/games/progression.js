@@ -3,25 +3,27 @@ import getRandomNum from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 
-const makeProgression = (firstNum, increment) => {
-  const array = [firstNum];
-  for (let i = 1; i < 10; i += 1) {
-    array.push(array[i - 1] + increment);
+const makeProgression = (firstNumber, step, progressionLength) => {
+  const progression = [firstNumber];
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(progression[i - 1] + step);
   }
-  const randomIndex = getRandomNum(0, 9);
-  const correctAnswer = array[randomIndex];
-  array[randomIndex] = '..';
-  return [array.join(' '), String(correctAnswer)];
+  return progression;
 };
 
-const playProgression = () => {
-  const randomNumber = getRandomNum(1, 50);
-  const increment = getRandomNum(1, 5);
-  return makeProgression(randomNumber, increment);
+const genProgressionGame = () => {
+  const progressionLength = 10;
+  const firstMember = getRandomNum(1, 50);
+  const step = getRandomNum(1, 5);
+  const progression = makeProgression(firstMember, step, progressionLength);
+  const randomIndex = getRandomNum(0, progressionLength - 1);
+  const correctAnswer = progression[randomIndex];
+  progression[randomIndex] = '..';
+  return [progression.join(' '), String(correctAnswer)];
 };
 
 const startGame = () => {
-  playGame(playProgression, task);
+  playGame(genProgressionGame, task);
 };
 
 export default startGame;

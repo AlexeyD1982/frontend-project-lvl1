@@ -10,7 +10,7 @@ const getGreatestCommonDivisor = (number1, number2) => {
   return getGreatestCommonDivisor(number2, number1 % number2);
 };
 
-const playGcd = () => {
+const genGCDGame = () => {
   const randomNumber1 = getRandomNum(1, 50);
   const randomNumber2 = getRandomNum(1, 50);
   const question = `${randomNumber1} ${randomNumber2}`;
@@ -19,7 +19,7 @@ const playGcd = () => {
 };
 
 const startGame = () => {
-  playGame(playGcd, task);
+  playGame(genGCDGame, task);
 };
 
 export default startGame;

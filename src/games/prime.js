@@ -7,7 +7,7 @@ const checkPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  for (let i = 2; i < number; i += 1) {
+  for (let i = 2; i <= Math.ceil(number / 2); i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -15,14 +15,14 @@ const checkPrime = (number) => {
   return true;
 };
 
-const playPrime = () => {
+const genPrimeGame = () => {
   const question = getRandomNum(1, 150);
   const correctAnswer = checkPrime(question) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  return [question.toString(), correctAnswer];
 };
 
 const startGame = () => {
-  playGame(playPrime, task);
+  playGame(genPrimeGame, task);
 };
 
 export default startGame;
