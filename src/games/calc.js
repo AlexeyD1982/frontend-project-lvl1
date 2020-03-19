@@ -1,4 +1,4 @@
-import playGame from '../index.js';
+import runEngine from '../index.js';
 import getRandomNum from '../utils.js';
 
 const task = 'What is the result of the expression?';
@@ -17,18 +17,18 @@ const calculate = (num1, num2, mathOperator) => {
   }
 };
 
-const genCalculationGame = () => {
+const genGameData = () => {
   const randomNum1 = getRandomNum(1, 50);
   const randomNum2 = getRandomNum(1, 50);
   const mathOperatorIndex = getRandomNum(0, 2);
-  const selectedMathOperator = mathOperators[mathOperatorIndex];
-  const correctAnswer = calculate(randomNum1, randomNum2, selectedMathOperator);
-  const question = `${randomNum1} ${selectedMathOperator} ${randomNum2}`;
+  const mathOperator = mathOperators[mathOperatorIndex];
+  const correctAnswer = calculate(randomNum1, randomNum2, mathOperator);
+  const question = `${randomNum1} ${mathOperator} ${randomNum2}`;
   return [question, String(correctAnswer)];
 };
 
 const startGame = () => {
-  playGame(genCalculationGame, task);
+  runEngine(genGameData, task);
 };
 
 export default startGame;
