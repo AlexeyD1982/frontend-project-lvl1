@@ -18,7 +18,6 @@ const runEngine = (getGameData, task) => {
     if (playerAnswer !== correctAnswer) {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${playerName}!`);
-      doStep(0);
       return;
     }
     console.log('Correct!');

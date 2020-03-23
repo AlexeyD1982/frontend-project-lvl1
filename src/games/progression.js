@@ -16,9 +16,9 @@ const genGameData = () => {
   const firstMember = getRandomNum(1, 50);
   const step = getRandomNum(1, 5);
   const progression = makeProgression(firstMember, step);
-  const randomIndex = getRandomNum(0, progressionLength - 1);
-  const correctAnswer = progression[randomIndex].toString();
-  progression[randomIndex] = '..';
+  const hiddenMemberIndex = getRandomNum(0, progressionLength - 1);
+  const correctAnswer = progression[hiddenMemberIndex].toString();
+  progression[hiddenMemberIndex] = '..';
   const question = progression.join(' ');
   return [question, correctAnswer];
 };
