@@ -20,7 +20,8 @@ const calculate = (num1, num2, mathOperator) => {
 const genGameData = () => {
   const randomNum1 = getRandomNum(1, 50);
   const randomNum2 = getRandomNum(1, 50);
-  const mathOperator = mathOperators[mathOperators.length - 1];
+  const mathOperatorIndex = getRandomNum(0, mathOperators.length - 1);
+  const mathOperator = mathOperators[mathOperatorIndex];
   const correctAnswer = calculate(randomNum1, randomNum2, mathOperator);
   const question = `${randomNum1} ${mathOperator} ${randomNum2}`;
   return [question, String(correctAnswer)];
